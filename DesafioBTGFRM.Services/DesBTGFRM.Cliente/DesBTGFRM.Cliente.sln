@@ -3,29 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente.Api", "Cliente.Api\Cliente.Api.csproj", "{FC6540F7-BC10-4857-A610-94B3DE0919EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Application", "Cliente.Application\Cliente.Application.csproj", "{9B2B0530-3903-4185-8FC7-228E9802A587}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05AAD3ED-F13E-4775-B5BF-7176640572DC} = {05AAD3ED-F13E-4775-B5BF-7176640572DC}
+		{B780D000-BEB2-40E8-9FF6-B553400C1047} = {B780D000-BEB2-40E8-9FF6-B553400C1047}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente.Application", "Cliente.Application\Cliente.Application.csproj", "{9B2B0530-3903-4185-8FC7-228E9802A587}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Domain", "Cliente.Domain\Cliente.Domain.csproj", "{B780D000-BEB2-40E8-9FF6-B553400C1047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente.Domain", "Cliente.Domain\Cliente.Domain.csproj", "{B780D000-BEB2-40E8-9FF6-B553400C1047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Infrastructure", "Cliente.Infrastructure\Cliente.Infrastructure.csproj", "{05AAD3ED-F13E-4775-B5BF-7176640572DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B780D000-BEB2-40E8-9FF6-B553400C1047} = {B780D000-BEB2-40E8-9FF6-B553400C1047}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente.Infrastructure", "Cliente.Infrastructure\Cliente.Infrastructure.csproj", "{05AAD3ED-F13E-4775-B5BF-7176640572DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Tests", "Cliente.Tests\Cliente.Tests.csproj", "{FE3DBF1C-7AA4-486E-BC74-48941576B806}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente.Tests", "Cliente.Tests\Cliente.Tests.csproj", "{FE3DBF1C-7AA4-486E-BC74-48941576B806}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Consumer", "Cliente.Consumer\Cliente.Consumer.csproj", "{0726A7DF-B63B-4525-BE51-2890E32E4311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente.API", "Cliente.API\Cliente.API.csproj", "{3F364BAC-4C69-46CD-B0D8-C3BF6D5C1912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC6540F7-BC10-4857-A610-94B3DE0919EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC6540F7-BC10-4857-A610-94B3DE0919EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC6540F7-BC10-4857-A610-94B3DE0919EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC6540F7-BC10-4857-A610-94B3DE0919EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B2B0530-3903-4185-8FC7-228E9802A587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B2B0530-3903-4185-8FC7-228E9802A587}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2B0530-3903-4185-8FC7-228E9802A587}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,5 +44,19 @@ Global
 		{FE3DBF1C-7AA4-486E-BC74-48941576B806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3DBF1C-7AA4-486E-BC74-48941576B806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3DBF1C-7AA4-486E-BC74-48941576B806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0726A7DF-B63B-4525-BE51-2890E32E4311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0726A7DF-B63B-4525-BE51-2890E32E4311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0726A7DF-B63B-4525-BE51-2890E32E4311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0726A7DF-B63B-4525-BE51-2890E32E4311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F364BAC-4C69-46CD-B0D8-C3BF6D5C1912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F364BAC-4C69-46CD-B0D8-C3BF6D5C1912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F364BAC-4C69-46CD-B0D8-C3BF6D5C1912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F364BAC-4C69-46CD-B0D8-C3BF6D5C1912}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0A9C29D-6629-4E4D-914F-2C41E522F069}
 	EndGlobalSection
 EndGlobal

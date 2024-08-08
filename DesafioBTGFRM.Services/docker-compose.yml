@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql:8.0.29
+    container_name: mysql_btgfrm
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: zsV8xzWY5dbfAgy
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
