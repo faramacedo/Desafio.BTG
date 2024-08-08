@@ -7,7 +7,11 @@ namespace Cliente.Infrastructure.Database
     public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
         private readonly IConfiguration _configuration;
-        
+        public AppDbContextFactory()
+        {
+            
+        }
+
         public AppDbContextFactory(IConfiguration configuration)
         {
             _configuration = configuration;

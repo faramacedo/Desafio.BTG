@@ -3,7 +3,7 @@
 public class Clientes
 {
 
-    public int Id { get; set; }
+    public int Id { get; internal set; }
     public int CodigoCliente { get; set; }
     public string Nome { get; set; }
     public int TipoPessoaId { get; set; }
@@ -14,7 +14,7 @@ public class Clientes
     public DateTime DataCadastro { get; set; }
     public DateTime? DataAlteracao { get; set; }
 
-    private Clientes (int id, int codigoCliente, string nome, int tipoPessoaId, string documento, int tipoDocumentoId, DateTime dataCadastro, DateTime? dataAlteracao)
+    private Clientes(int id, int codigoCliente, string nome, int tipoPessoaId, string documento, int tipoDocumentoId, DateTime dataCadastro, DateTime? dataAlteracao)
     {
         Id = id;
         CodigoCliente = codigoCliente;
@@ -26,9 +26,9 @@ public class Clientes
         DataAlteracao = dataAlteracao;
     }
 
-    public static Clientes Cadastrar(int id, int codigoCliente, string nome, int tipoPessoaId, string documento, int tipoDocumentoId) 
+    public static Clientes Cadastrar(int id, int codigoCliente, string nome, int tipoPessoaId, string documento, int tipoDocumentoId)
     {
-        return new Clientes(id, codigoCliente, nome, tipoPessoaId, documento, tipoDocumentoId, DateTime.Now, null);
+        return new Clientes(0, codigoCliente, nome, tipoPessoaId, documento, tipoDocumentoId, DateTime.Now, null);
     }
     public void Atualizar(int id, int codigoCliente, string nome, int tipoPessoaId, string documento, int tipoDocumentoId)
     {
@@ -38,6 +38,6 @@ public class Clientes
         TipoPessoaId = tipoPessoaId;
         Documento = documento;
         TipoDocumentoId = tipoDocumentoId;
-        DataAlteracao= DateTime.Now;
+        DataAlteracao = DateTime.Now;
     }
 }

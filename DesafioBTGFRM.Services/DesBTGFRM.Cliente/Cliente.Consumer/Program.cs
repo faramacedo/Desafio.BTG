@@ -1,5 +1,7 @@
-﻿using RabbitMQ.Client;
+﻿using Cliente.Infrastructure.RabbitMQ;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace Cliente.Consumer
@@ -11,7 +13,6 @@ namespace Cliente.Consumer
             var factory = new ConnectionFactory { HostName = "localhost" };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
-
 
             channel.QueueDeclare(queue: "Clientes",
                                  durable: false,
@@ -27,6 +28,11 @@ namespace Cliente.Consumer
             {
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
+
+                using (var rabbitService = new RabbitMQService())
+                {
+                    rabbitService.MessageConsumer(message);
+                }
 
                 Console.WriteLine(message);
             };

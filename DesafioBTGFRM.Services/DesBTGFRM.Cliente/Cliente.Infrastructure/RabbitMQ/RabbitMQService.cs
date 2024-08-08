@@ -1,16 +1,9 @@
-﻿using Cliente.Domain;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using RabbitMQ.Client;
 using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
 
 namespace Cliente.Infrastructure.RabbitMQ
 {
-    public class RabbitMQService :IRabbitMQService
+    public class RabbitMQService : IRabbitMQService, IDisposable
     {
         public void MessageProducer(string fila, string message)
         {
@@ -32,5 +25,32 @@ namespace Cliente.Infrastructure.RabbitMQ
                                  body: body);
 
         }
-    }    
+
+        public bool MessageConsumer(string message)
+        {
+            bool result = false;
+            var index = message.IndexOf(":");
+            var acao = message.Substring(0, index);
+            var messsage = message.Substring(index + 1, message.Length - index - 1);
+
+            switch (acao)
+            {
+                case "CadastraCliente":
+
+                    result = true;
+                    break;
+                case "AtualizarCliente":
+                    result = false;
+                    break;
+                default:
+                    break;
+            }
+            return result;
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+    }
 }
