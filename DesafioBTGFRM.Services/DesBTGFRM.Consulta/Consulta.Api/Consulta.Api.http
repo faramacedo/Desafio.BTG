@@ -1,6 +1,6 @@
-@Consulta.Api_HostAddress = http://localhost:5213
+@Consulta.API_HostAddress = http://localhost:5043
 
-GET {{Consulta.Api_HostAddress}}/weatherforecast/
+GET {{Consulta.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

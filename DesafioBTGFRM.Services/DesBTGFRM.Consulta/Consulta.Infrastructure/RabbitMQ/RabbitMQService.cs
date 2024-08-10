@@ -1,7 +1,7 @@
 ﻿using RabbitMQ.Client;
 using System.Text;
 
-namespace Cliente.Infrastructure.RabbitMQ
+namespace Consulta.Infrastructure.RabbitMQ
 {
     public class RabbitMQService : IRabbitMQService, IDisposable
     {

@@ -17,10 +17,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Infrastructure", "C
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Tests", "Cliente.Tests\Cliente.Tests.csproj", "{FE3DBF1C-7AA4-486E-BC74-48941576B806}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05AAD3ED-F13E-4775-B5BF-7176640572DC} = {05AAD3ED-F13E-4775-B5BF-7176640572DC}
+		{9B2B0530-3903-4185-8FC7-228E9802A587} = {9B2B0530-3903-4185-8FC7-228E9802A587}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.Consumer", "Cliente.Consumer\Cliente.Consumer.csproj", "{0726A7DF-B63B-4525-BE51-2890E32E4311}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente.API", "Cliente.API\Cliente.API.csproj", "{3F364BAC-4C69-46CD-B0D8-C3BF6D5C1912}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cliente.API", "Cliente.API\Cliente.API.csproj", "{3F364BAC-4C69-46CD-B0D8-C3BF6D5C1912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
